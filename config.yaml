@@ -1,0 +1,28 @@
+data_file : "Coding_Proj_Data.xls"
+starting_balance : 1000000
+stock_name : 'SPY'
+strategy_names : ['Buy_And_Hold', 'Trend', 'Collar']
+
+transaction_costs:
+  stock : 0.03
+  option : 0.04
+
+data:
+  interpolate_maturity : 270
+  interpolate_interest_rate : 270
+
+trend:
+  short_average : 50
+  long_average : 200
+
+collar:
+  call_strike : 1.05
+  call_maturity : [30]
+  put_strike : 0.95
+  put_maturity : [90,180,270,360]
+  contract_size : 100
+  cash_buffer_percent : 0.1
+
+analysis:
+  directory : '/Backtest_'
+
